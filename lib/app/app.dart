@@ -1,3 +1,4 @@
+import 'package:chefapp/core/routes/app_route.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,6 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: Routes.intitlRoute,
+      onGenerateRoute: AppRoute.generateRoute,
       title: 'Flutter Demo',
 
       home: Scaffold()
