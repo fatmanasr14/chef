@@ -55,6 +55,8 @@ class AppRoute{
         return MaterialPageRoute(builder: (_) => const SettingScreen());
       case Routes.changePassword:
         return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
+      // case Routes.home:
+      //   return MaterialPageRoute(builder: (_) => const HomeScreen());  
 
         default:
         return MaterialPageRoute(
