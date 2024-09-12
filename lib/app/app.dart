@@ -2,6 +2,7 @@ import 'package:chefapp/core/bloc_cubit/cubit/global_cubit.dart';
 import 'package:chefapp/core/bloc_cubit/cubit/global_state.dart';
 import 'package:chefapp/core/local/app_localization.dart';
 import 'package:chefapp/core/routes/app_route.dart';
+import 'package:chefapp/features/auth/presentaion/views/login_screen.dart';
 import 'package:chefapp/features/auth/presentaion/views/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               initialRoute: Routes.intitlRoute,
               onGenerateRoute: AppRoute.generateRoute,
               title: 'Flutter Demo',
-              home: Splashscreen(),
+              home: LoginScreen(),
             );
           },
         );
