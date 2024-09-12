@@ -39,6 +39,7 @@ dependencies:
   dio: any
   flutter_screenutil: any
   flutter_localization: 
+  flutter_bloc: 
 
 
 dev_dependencies:
