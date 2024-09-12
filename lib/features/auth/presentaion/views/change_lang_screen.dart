@@ -65,7 +65,7 @@ class ChangeLangScreen extends StatelessWidget {
                               height: 48.h,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  BlocProvider.of<GlobalCubit>(context).changelang();
+                                  BlocProvider.of<GlobalCubit>(context).changelang('en');
                                 },
                                 child: Text(
                                   "English",
@@ -88,7 +88,7 @@ class ChangeLangScreen extends StatelessWidget {
                               height: 48.h,
                               child: ElevatedButton(
                                   onPressed: () {
-                                    BlocProvider.of<GlobalCubit>(context).changelang();
+                                    BlocProvider.of<GlobalCubit>(context).changelang('ar');
                                   },
                                   child: Text(
                                     "العربيه",
