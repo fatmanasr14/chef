@@ -1,0 +1,14 @@
+{
+    "welcomeToChefApp": "مرحبا بك في تطبيق شيف",
+    "chefApp": "تطبيق شيف",
+    "pleaseChooseYourLanguage": "من فضلك اختر لغتك المفضلة",
+    "welcomeBack": "مرحبا بعودتك",
+    "sign_in": "تسجيل الدخول",
+    "sign_up": "إنشاء حساب",
+    "email": "البريد الاكتروني",
+    "name": "الاسم",
+    "phone_number": "رقم الهاتف",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "forgetPassword": "نسيت كلمة السر؟"
+}

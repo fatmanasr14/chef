@@ -1,0 +1,16 @@
+{
+    "welcomeToChefApp": "Welcome To Chef App",
+    "chefApp": "Chef App",
+    "pleaseChooseYourLanguage": "Please Choose Your Language",
+    "welcomeBack": "Welcome Back",
+    "sign_in": "Login",
+    "sign_up": "Regsiter",
+    "loginSucessfully": "Login Sucessfully",
+    "loginFailed": "Invalid Data",
+    "email": "Email",
+    "name": "Name",
+    "phone_number": "Phone Number",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgetPassword": "Forget Password"
+}

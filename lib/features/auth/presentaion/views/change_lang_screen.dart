@@ -1,4 +1,6 @@
+import 'package:chefapp/core/local/app_localization.dart';
 import 'package:chefapp/core/uitls/app_color.dart';
+import 'package:chefapp/core/uitls/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +31,7 @@ class ChangeLangScreen extends StatelessWidget {
                     height: 16.h,
                   ),
                   Text(
-                    "Welcome to Chef App",
+                    AppStrings.welcomeToChefApp.tr(context),
                     style: TextStyle(
                         color: appcolor.black,
                         fontWeight: FontWeight.bold,
@@ -39,14 +41,14 @@ class ChangeLangScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    "Please Choose Your Language",
+                    AppStrings.pleaseChooseYourLanguage.tr(context),
                     style: TextStyle(
                         color: appcolor.black,
                         fontWeight: FontWeight.w400,
                         fontSize: 13.sp),
                   ),
                   SizedBox(
-                    height: 40.h,
+                    height: 50.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +70,7 @@ class ChangeLangScreen extends StatelessWidget {
                             )
                             ,)
                             ),
-                      Spacer(),
+                      SizedBox(width: 13.w,),
                     SizedBox(
                       width: 140.w,
                       height: 48.h,

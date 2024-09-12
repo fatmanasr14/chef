@@ -1,5 +1,7 @@
+import 'package:chefapp/core/local/app_localization.dart';
 import 'package:chefapp/core/routes/app_route.dart';
 import 'package:chefapp/core/uitls/app_color.dart';
+import 'package:chefapp/core/uitls/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,7 +38,7 @@ class _SplashscreenState extends State<Splashscreen> {
               width: 120.w,
               child: Image.asset("assets/chef_1.png",)),
             SizedBox(height: 12.h,),
-            Text("Chef App",style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: appcolor.white),)
+            Text(AppStrings.chefApp.tr(context),style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: appcolor.white),)
 
           ],
         ),
