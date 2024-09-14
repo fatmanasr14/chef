@@ -14,9 +14,11 @@ class AuthRepository{
       ApiKeys.email:email,
       ApiKeys.password:password
     });
+    //from dartz
    return Right(LoginModel.fromJson(response));
    }on ServerException catch(error){
-  return Left(error.errorModel.errorMessage);
+    //from dartz
+  return Left(error.errorModel.errorMessage);  //message when error occur
    }
   }
 }

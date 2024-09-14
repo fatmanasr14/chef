@@ -111,7 +111,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               onPressed: () {
                                 if(BlocProvider.of<LoginCubit>(context).loginKey.currentState!.validate()){
-                                   print("login");
+                                   BlocProvider.of<LoginCubit>(context).login();
                                 }
                               },
                               child: Text(
