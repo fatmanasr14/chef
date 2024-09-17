@@ -49,11 +49,14 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 50, left: 25, right: 25),
                 child: BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
-                    if(state is LoginSucessState){
-                      showToast(message: AppStrings.loginSucessfully.tr(context), state: ToastStates.success);
+                    if (state is LoginSucessState) {
+                      showToast(
+                          message: AppStrings.loginSucessfully.tr(context),
+                          state: ToastStates.success);
                     }
-                    if(state is LoginErrorState){
-                      showToast(message: state.message, state: ToastStates.error);
+                    if (state is LoginErrorState) {
+                      showToast(
+                          message: state.message, state: ToastStates.error);
                     }
                   },
                   builder: (context, state) {
@@ -68,10 +71,12 @@ class LoginScreen extends StatelessWidget {
                           CustomTextformfield(
                             hint: AppStrings.email.tr(context),
                             c1: Color.fromARGB(234, 51, 91, 137),
-                            controller: BlocProvider.of<LoginCubit>(context).emailcontroller,
+                            controller: BlocProvider.of<LoginCubit>(context)
+                                .emailcontroller,
                             icon: Icons.email_outlined,
                             validate: (data) {
-                              if (data!.isEmpty || !data.contains('@gmail.com')) {
+                              if (data!.isEmpty ||
+                                  !data.contains('@gmail.com')) {
                                 return AppStrings.pleaseEnterValidEmail
                                     .tr(context);
                               }
@@ -79,15 +84,20 @@ class LoginScreen extends StatelessWidget {
                             },
                           ),
                           SizedBox(height: 32.h),
+
                           ///password/////////////////////////////////////////////
                           CustomTextformfield(
                             hint: AppStrings.password.tr(context),
-                            controller: BlocProvider.of<LoginCubit>(context).passwordcontroller,
+                            controller: BlocProvider.of<LoginCubit>(context)
+                                .passwordcontroller,
                             c1: Color.fromARGB(234, 51, 91, 137),
-                            icon: BlocProvider.of<LoginCubit>(context).suffixIcon,
-                            isPassword:BlocProvider.of<LoginCubit>(context).isloginPasswordVisibility,
+                            icon:
+                                BlocProvider.of<LoginCubit>(context).suffixIcon,
+                            isPassword: BlocProvider.of<LoginCubit>(context)
+                                .isloginPasswordVisibility,
                             suffixIcononPressed: () {
-                              BlocProvider.of<LoginCubit>(context).changeLoginPasswordIcon();
+                              BlocProvider.of<LoginCubit>(context)
+                                  .changeLoginPasswordIcon();
                             },
                             validate: (data) {
                               if (data!.length < 6 || data.isEmpty) {
@@ -102,38 +112,50 @@ class LoginScreen extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              TextButton(child:Text(style: TextStyle(
-                                color: appcolor.primary
-                              ),AppStrings.forgetPassword.tr(context),),
-                               onPressed: () { 
-                                navigate(context: context, route: Routes.sendCode);
-                                },),
+                              TextButton(
+                                child: Text(
+                                  style: TextStyle(color: appcolor.primary),
+                                  AppStrings.forgetPassword.tr(context),
+                                ),
+                                onPressed: () {
+                                  navigate(
+                                      context: context, route: Routes.sendCode);
+                                },
+                              ),
                             ],
                           ),
                           SizedBox(
                             height: 32.h,
                           ),
-                         state is LoginLodingState?SpinKitFadingCircle(color: appcolor.white,): ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: appcolor.primary,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                minimumSize: Size(300, 50), //width
-                                maximumSize: Size(300, double.infinity),
-                              ),
-                              onPressed: () {
-                                if(BlocProvider.of<LoginCubit>(context).loginKey.currentState!.validate()){
-                                   BlocProvider.of<LoginCubit>(context).login();
-                                }
-                              },
-                              child: Text(
-                                AppStrings.signIn.tr(context),
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
-                              )),
+                          state is LoginLodingState
+                              ? SpinKitFadingCircle(
+                                  color: appcolor.white,
+                                )
+                              : ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: appcolor.primary,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    minimumSize: Size(300, 50), //width
+                                    maximumSize: Size(300, double.infinity),
+                                  ),
+                                  onPressed: () {
+                                    if (BlocProvider.of<LoginCubit>(context)
+                                        .loginKey
+                                        .currentState!
+                                        .validate()) {
+                                      BlocProvider.of<LoginCubit>(context)
+                                          .login();
+                                    }
+                                  },
+                                  child: Text(
+                                    AppStrings.signIn.tr(context),
+                                    style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  )),
                           SizedBox(
                             height: 32.h,
                           ),
