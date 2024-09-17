@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:chefapp/core/uitls/common.dart';
 import 'package:chefapp/features/auth/presentaion/cubit/cubit/login_cubit.dart';
 import 'package:chefapp/features/auth/presentaion/cubit/cubit/login_state.dart';
 import 'package:flutter/material.dart';
@@ -47,8 +48,12 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 50, left: 25, right: 25),
                 child: BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
-                    if(state is LoginSucessState){}
-                    if(state is LoginErrorState){}
+                    if(state is LoginSucessState){
+                      showToast(message: AppStrings.loginSucessfully.tr(context), state: ToastStates.success);
+                    }
+                    if(state is LoginErrorState){
+                      showToast(message: state.message, state: ToastStates.error);
+                    }
                   },
                   builder: (context, state) {
                     return Form(
