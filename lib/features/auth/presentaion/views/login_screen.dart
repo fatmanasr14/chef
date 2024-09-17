@@ -47,7 +47,8 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 50, left: 25, right: 25),
                 child: BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
-                    // TODO: implement listener
+                    if(state is LoginSucessState){}
+                    if(state is LoginErrorState){}
                   },
                   builder: (context, state) {
                     return Form(
