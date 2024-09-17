@@ -1,4 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:chefapp/core/database/api/endpoint.dart';
+import 'package:chefapp/core/database/cacheHelper/cachehelper.dart';
+import 'package:chefapp/core/services/service_locator.dart';
 import 'package:chefapp/features/auth/data/models/logim_model.dart';
 import 'package:chefapp/features/auth/data/repository/auth_repository.dart';
 import 'package:chefapp/features/auth/presentaion/cubit/cubit/login_state.dart';
@@ -33,6 +36,7 @@ LoginModel? loginModel;
     result.fold((l) => emit(LoginErrorState(l)), 
     (r) {
       loginModel=r;
+      sl<CacheHelper>().saveData(key: ApiKeys.token, value: r.token);
       emit(LoginSucessState());
     });
   }

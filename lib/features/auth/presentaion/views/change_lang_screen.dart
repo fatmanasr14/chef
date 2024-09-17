@@ -18,7 +18,7 @@ class ChangeLangScreen extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.asset(
-              "assets/screen1.png",
+              "assets/s1.png",
             ),
             Padding(
               padding: const EdgeInsets.all(24.0),
@@ -38,7 +38,7 @@ class ChangeLangScreen extends StatelessWidget {
                   Text(
                     AppStrings.welcomeToChefApp.tr(context),
                     style: TextStyle(
-                        color: appcolor.black,
+                        color: appcolor.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 24.sp),
                   ),
@@ -48,7 +48,7 @@ class ChangeLangScreen extends StatelessWidget {
                   Text(
                     AppStrings.pleaseChooseYourLanguage.tr(context),
                     style: TextStyle(
-                        color: appcolor.black,
+                        color: appcolor.white,
                         fontWeight: FontWeight.w400,
                         fontSize: 13.sp),
                   ),
@@ -69,7 +69,7 @@ class ChangeLangScreen extends StatelessWidget {
                                 },
                                 child: Text(
                                   "English",
-                                  style: TextStyle(fontWeight: FontWeight.w800),
+                                  style: TextStyle(fontWeight: FontWeight.w800,color: appcolor.primary),
                                 ),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: appcolor.white,
@@ -93,7 +93,7 @@ class ChangeLangScreen extends StatelessWidget {
                                   child: Text(
                                     "العربيه",
                                     style:
-                                        TextStyle(fontWeight: FontWeight.w900),
+                                        TextStyle(fontWeight: FontWeight.w900,color: appcolor.primary),
                                   ),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: appcolor.white,

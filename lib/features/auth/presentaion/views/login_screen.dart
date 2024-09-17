@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:chefapp/core/routes/app_route.dart';
 import 'package:chefapp/core/uitls/common.dart';
 import 'package:chefapp/features/auth/presentaion/cubit/cubit/login_cubit.dart';
 import 'package:chefapp/features/auth/presentaion/cubit/cubit/login_state.dart';
@@ -97,11 +98,16 @@ class LoginScreen extends StatelessWidget {
                             },
                           ),
                           SizedBox(
-                            height: 24.h,
+                            height: 20.h,
                           ),
                           Row(
                             children: [
-                              Text(AppStrings.forgetPassword.tr(context)),
+                              TextButton(child:Text(style: TextStyle(
+                                color: appcolor.primary
+                              ),AppStrings.forgetPassword.tr(context),),
+                               onPressed: () { 
+                                navigate(context: context, route: Routes.sendCode);
+                                },),
                             ],
                           ),
                           SizedBox(
