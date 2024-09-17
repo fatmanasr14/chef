@@ -9,6 +9,7 @@ import 'package:chefapp/core/local/app_localization.dart';
 import 'package:chefapp/core/uitls/app_color.dart';
 import 'package:chefapp/core/uitls/app_strings.dart';
 import 'package:chefapp/core/widgets/custom_textformfield.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -100,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             height: 32.h,
                           ),
-                          ElevatedButton(
+                         state is LoginLodingState?SpinKitFadingCircle(color: appcolor.white,): ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: appcolor.primary,
                                 shape: RoundedRectangleBorder(

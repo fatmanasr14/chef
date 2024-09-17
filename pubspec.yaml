@@ -42,6 +42,7 @@ dependencies:
   flutter_bloc: 
   get_it: 
   dartz: 
+  flutter_spinkit: 
 
 
 dev_dependencies:
